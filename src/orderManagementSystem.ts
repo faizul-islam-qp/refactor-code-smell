@@ -7,9 +7,6 @@ class OrderManagementSystem {
     const customer = OrderManagementSystem.createCustomer();
     const order = OrderManagementSystem.createOrder(customer);
     OrderManagementSystem.addOrderItems(order);
-
-    order.printOrder();
-
     OrderManagementSystem.generateInvoice(order);
   }
 
@@ -28,6 +25,8 @@ class OrderManagementSystem {
   }
 
   static generateInvoice(order: Order): void {
+    order.printOrder();
+
     console.log("Generating Invoice...");
     console.log(`Customer: ${order.customer.name}`);
     console.log(`Total: $${order.totalPrice}`);
