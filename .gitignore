@@ -1,0 +1,29 @@
+# OS X
+.DS_Store*
+Icon?
+._*
+
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux
+.directory
+
+ormconfig.json
+
+# Ignore the TypeScript build info file
+*.tsbuildinfo
+
+# npm
+node_modules
+dist
+*.log
+*.gz
+
+# other
+.idea
+.env
+coverage
