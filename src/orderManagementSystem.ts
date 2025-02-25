@@ -4,16 +4,27 @@ import { Order } from "./order";
 
 class OrderManagementSystem {
   static main(): void {
-    const customer = new Customer("John Doe", CustomerTypeEnum.VIP);
-    const order = new Order(customer);
-
-    order.addItem("Laptop", 1000);
-    order.addItem("Mouse", 50);
-    order.addItem("Keyboard", 80);
+    const customer = OrderManagementSystem.createCustomer();
+    const order = OrderManagementSystem.createOrder(customer);
+    OrderManagementSystem.addOrderItems(order);
 
     order.printOrder();
 
     OrderManagementSystem.generateInvoice(order);
+  }
+
+  static createCustomer(): Customer {
+    return new Customer("John Doe", CustomerTypeEnum.VIP);
+  }
+
+  static createOrder(customer: Customer): Order {
+    return new Order(customer);
+  }
+
+  static addOrderItems(order: Order): void {
+    order.addItem("Laptop", 1000);
+    order.addItem("Mouse", 50);
+    order.addItem("Keyboard", 80);
   }
 
   static generateInvoice(order: Order): void {
