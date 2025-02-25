@@ -28,7 +28,7 @@ export class Order {
 
   applyDiscount(): void {
     this.discountedPrice =
-      this.totalPrice - this.totalPrice * this.customer.discount;
+      this.totalPrice - this.totalPrice * this.customer.getDiscount();
   }
 
   printOrder(): void {

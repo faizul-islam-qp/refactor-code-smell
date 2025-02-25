@@ -2,7 +2,7 @@ import { CustomerTypeEnum } from "./enums/customerTypeEnum";
 export class Customer {
   name: string;
   type: CustomerTypeEnum;
-  discount: number;
+  private discount: number;
 
   constructor(name: string, type: CustomerTypeEnum) {
     this.name = name;
@@ -10,7 +10,7 @@ export class Customer {
     this.setDiscount();
   }
 
-  setDiscount(): void {
+  private setDiscount(): void {
     if (this.type === CustomerTypeEnum.Regular) {
       this.discount = 0.05;
     } else if (this.type === CustomerTypeEnum.Premium) {
@@ -20,5 +20,9 @@ export class Customer {
     } else {
       this.discount = 0;
     }
+  }
+
+  getDiscount(): number {
+    return this.discount;
   }
 }
